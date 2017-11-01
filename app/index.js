@@ -41,6 +41,12 @@ module.exports = generators.Base.extend({
             }
         }, {
             type: 'list',
+            name: 'version',
+            message: 'Choose SDK Version',
+            choices: ['1.1.4','2.0.0'],
+            store: true 
+        }, {
+            type: 'list',
             name: 'css',
             message: 'What CSS Framework would you like to use?',
             choices: [{ name: "None" }, framework.skeleton, framework.bootstrap],
@@ -51,12 +57,6 @@ module.exports = generators.Base.extend({
             message: 'Would you like to enable jQuery?',
             choices: ['Yes', 'No'],
             store: true
-        }, {
-            type: 'list',
-            name: 'version',
-            message: 'SDK VERSION?',
-            choices: ['1.1.4','2.0.1','new'],
-            store: true 
         }]).then(function(answers) {
             if (answers.name) {
                 this.appname = answers.name;
