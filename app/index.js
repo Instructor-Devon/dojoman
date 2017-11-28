@@ -13,7 +13,6 @@ module.exports = generators.Base.extend({
 
         // This makes `appname` a required argument.
         this.argument('appname', { type: String, required: false });
-        console.log(this.sourceRoot());
     },
 
     //Initialize variables and opening statement

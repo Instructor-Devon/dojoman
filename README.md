@@ -9,9 +9,10 @@ Offers the ability to toggle usage of the following front-end packages/framework
  - jQuery Validation
 
 ### Usage
-Install: ```npm install -g generator-candyman```
+Install: ```git clone this repository```
+From the cloned repo's working directory, run: ```sudo npm link```(MacOS/Linux) or just ```npm link```(Windows)
 
-Run ```yo candyman```, optionally passing an app name
+Run ```yo candyman``` from anywhere on your system, optionally passing an app name
 ```
 yo candyman [app=name]
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "generator-testing",
+  "name": "generator-candyman",
   "version": "0.2.0",
   "license": "MIT",
   "description": "Yeoman generator for a base ASP.NET Core project",
