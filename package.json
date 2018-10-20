@@ -1,6 +1,6 @@
 {
   "name": "generator-dojoman",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "Yeoman generator for a base ASP.NET Core project",
   "repository": "git://github.com/InstructorDevon/dojoman",
