@@ -40,12 +40,6 @@ module.exports = generators.Base.extend({
             }
         }, {
             type: 'list',
-            name: 'version',
-            message: 'Choose SDK Version',
-            choices: ['2.0.3', '2.1.5'],
-            store: true 
-        }, {
-            type: 'list',
             name: 'css',
             message: 'What CSS Framework would you like to use?',
             choices: [{ name: "None" }, framework.skeleton, framework.bootstrap],
@@ -61,18 +55,16 @@ module.exports = generators.Base.extend({
                 this.appname = answers.name;
             }
             this.framework = answers.css;
-			this.version = answers.version;
             this.jquery = answers.jquery;
             // Stores the user's answer RE: .gitignore
             this.cusGitIgnore = answers.cusGitIgnore;
-            this.sourceRoot(path.join(__dirname, answers.version));
             done();
         }.bind(this));
     },
 
     //Define Paths
     paths: function() {
-        console.log(this.sourceRoot());
+        this.sourceRoot();
         this.templatePath('index.js');
     },
 
@@ -250,3 +242,4 @@ module.exports = generators.Base.extend({
     //Possible function to install bower if it does not already exist?
     //
 });
+
