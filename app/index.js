@@ -206,6 +206,8 @@ module.exports = generators.Base.extend({
             function(err) {
                 if (err) {
                     console.log(chalk.red(err));
+					console.log(chalk.green("try installing bower npm package!"));
+					console.log(chalk.blue("npm install -g bower"));
                 } else {
                     success = true;
                     console.log(chalk.green("Finished Bower Install!"));
