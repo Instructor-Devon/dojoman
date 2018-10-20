@@ -1,0 +1,7 @@
+{
+  "DBInfo":
+  {
+      "Name": "MySQLconnect",
+      "ConnectionString": "server=localhost;userid=YOUR_USERNAME;password=YOUR_PASSWORD;port=YOUR_PORT;database=YOUR_DB_NAME;SslMode=None"
+  }
+}

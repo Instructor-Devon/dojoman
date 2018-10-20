@@ -42,7 +42,7 @@ module.exports = generators.Base.extend({
             type: 'list',
             name: 'version',
             message: 'Choose SDK Version',
-            choices: ['1.1.4','2.0.0'],
+            choices: ['2.0.3', '2.1.5'],
             store: true 
         }, {
             type: 'list',
@@ -61,6 +61,7 @@ module.exports = generators.Base.extend({
                 this.appname = answers.name;
             }
             this.framework = answers.css;
+			this.version = answers.version;
             this.jquery = answers.jquery;
             // Stores the user's answer RE: .gitignore
             this.cusGitIgnore = answers.cusGitIgnore;
@@ -135,6 +136,14 @@ module.exports = generators.Base.extend({
             );
         },
 
+        // Adds the appsettings file
+        appsettings: function() {
+            this.fs.copy(
+                this.templatePath('_appsettings.json'),
+                this.destinationPath(this.appname + '/appsettings.json')
+            );
+        },
+
         // Adds the .gitignore file
         gitignore: function() {
             this.fs.copy(
@@ -151,6 +160,15 @@ module.exports = generators.Base.extend({
             );
         },
 
+        //Property Files
+        properties: function() {
+			if(this.version = "2.1.5")
+            	this.fs.copyTpl(
+            	    this.templatePath('_Properties/_launchSettings.json'),
+            	    this.destinationPath(this.appname + '/Properties/launchSettings.json'), { namespace: this.appname }
+            	);
+        },
+		
         //View Files
         views: function() {
             this.fs.copy(
